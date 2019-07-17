@@ -22,8 +22,11 @@ public class NettyServer {
         // 配置服务端的NIO线程组
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
+
         ServerBootstrap b = new ServerBootstrap();
 
+
+        //需要两个线程组
         b.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)
             .option(ChannelOption.SO_BACKLOG, 1024)
             .childHandler(new ServerInit());
