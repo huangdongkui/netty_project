@@ -16,6 +16,7 @@ public class KryoEncoder  extends MessageToByteEncoder<MyMessage> {
     protected void encode(ChannelHandlerContext ctx, MyMessage message,
                           ByteBuf out) throws Exception {
         KryoSerializer.serialize(message, out);
+        //发送ByteBuf到目标IP
         ctx.flush();
     }
 }

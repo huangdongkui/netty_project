@@ -10,7 +10,7 @@ import prv.hdk.serverandclient.kryocodec.KryoEncoder;
 
 /**
  * @author hdk
- * 类说明：
+ * 类说明：服务端入站处理器初始化类
  */
 public class ServerInit extends ChannelInitializer<SocketChannel> {
     @Override
@@ -43,5 +43,7 @@ public class ServerInit extends ChannelInitializer<SocketChannel> {
         /*服务端业务处理*/
         ch.pipeline().addLast("ServerBusiHandler",
                 new ServerBusiHandler());
+
+
     }
 }

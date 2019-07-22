@@ -42,5 +42,7 @@ public class ClientInit extends ChannelInitializer<SocketChannel> {
 //        /*发出心跳请求*/
         ch.pipeline().addLast("HeartBeatHandler",
                 new HeartBeatReqHandler());
+
+
     }
 }
